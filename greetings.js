@@ -1,1 +1,0 @@
-console.log("Greetings from Rishabh Baruah")
