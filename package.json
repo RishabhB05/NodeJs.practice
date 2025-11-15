@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/RishabhB05/NodeJs.practice#readme",
+  "bugs": {
+    "url": "https://github.com/RishabhB05/NodeJs.practice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RishabhB05/NodeJs.practice.git"
+  },
+  "license": "ISC",
+  "author": "rishi",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "Intro":"node greetings.js"
+    
+  }
+}
