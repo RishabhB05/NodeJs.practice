@@ -38,11 +38,44 @@ fs.readFile('./.test.txt', 'utf8', (err, data) => {
 
 //read file sync
 //while sync returns the data after completion
-const result = fs.readFileSync('./.test.txt', 'utf8');
-console.log('File contents (sync):', result);
+// const result = fs.readFileSync('./.test.txt', 'utf8');
+// console.log('File contents (sync):', result);
 
 
 //append to a file sync
 //why this is usefull: suppose we making a webserver log.txt and whenever we get incomming request we we store the ip address of the user in log.txt so we can append the ip address to log.txt whenever we get a request
-fs.appendFileSync('.test.txt', '\nThis is an appended line (sync).');
+// fs.appendFileSync('.test.txt', '\nThis is an appended line (sync).');
 
+
+// fs.unlinkSync('.test.txt'); //deletes the file
+
+// console.log(fs.statSync('./.test.txt')); //gives info about the directory
+
+
+
+//BLOCKING vs NON-BLOCKING
+
+const fs = require('fs');
+
+//blocking code
+console.log('1');
+const result = fs.readFileSync('.test.txt', 'utf8');
+console.log(result);
+
+console.log('2');
+
+//non-blocking code
+console.log('A');
+fs.readFile('.test.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+        return;
+    }
+    console.log(data);
+});
+console.log('B');
+
+
+//Threads in Node.js
+const os = require('os');
+console.log('Number of CPU cores:', os.cpus().length);  
